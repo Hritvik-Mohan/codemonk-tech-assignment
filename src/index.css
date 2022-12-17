@@ -1,12 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: "Montserrat";
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
+  --clr-accent: #131F97;
+  --clr-accent-light: #848AC6;
+  --clr-grey: #212121;
+  --clr-dark: #000000;
+  --clr-light: #F5F5F5;
+  --clr-white: #FFFFFF;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+ul {
+  list-style: none;
 }
