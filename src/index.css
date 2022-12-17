@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
 }
 
 :root {
@@ -12,10 +14,12 @@
 
   --clr-accent: #131F97;
   --clr-accent-light: #848AC6;
-  --clr-grey: #212121;
+  --clr-dark-grey: #212121;
+  --clr-light-grey: #DADADA;
   --clr-dark: #000000;
   --clr-light: #F5F5F5;
   --clr-white: #FFFFFF;
+  --clr-whiteish: #b5b5b5;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,6 +28,13 @@
   -webkit-text-size-adjust: 100%;
 }
 
+.container {
+  max-width: 1139px;
+  margin: 0 auto;
+  width: 90%;
+}
+
 ul {
   list-style: none;
 }
+

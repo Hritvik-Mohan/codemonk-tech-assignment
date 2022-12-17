@@ -5,8 +5,11 @@
   text-align: center; */
 }
 
-@font-face {
+/* @font-face {
   font-family: "Montserrat";
   src: local("Montserrat"),
     url("./font/Montserrat/Montserrat-Regular.ttf") format("truetype");
-}
+  font-family: "Montserrat";
+    src: local("Montserrat"),
+    url("./Font/Montserrat/Montserrat-Black.ttf") format("truetype");
+} */
