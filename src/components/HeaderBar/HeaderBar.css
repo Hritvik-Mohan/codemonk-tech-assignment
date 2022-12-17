@@ -1,9 +1,6 @@
-.header-contaienr {
+.header-container {
     display: flex;
     justify-content: space-between;
-    max-width: 1139px;
-    margin: 0 auto;
-    width: 90%;
 }
 
 .header {

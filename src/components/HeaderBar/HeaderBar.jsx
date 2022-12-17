@@ -7,7 +7,7 @@ import './HeaderBar.css'
 export default function HeaderBar() {
   return (
     <header className='header'>
-      <div className='header-contaienr container'>
+      <div className='header-container container'>
         <div className="logo">
           <img src={logo} alt="" srcSet="" />
         </div>
