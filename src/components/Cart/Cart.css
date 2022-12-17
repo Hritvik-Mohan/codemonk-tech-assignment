@@ -1,0 +1,14 @@
+.cart-heading {
+    display: none;
+}
+
+.cart-header {
+    display: none;
+}
+
+.cart-container {
+    background-color: var(--clr-light);
+    margin-top: 1.875rem;
+    border: 1px solid var(--clr-light-grey);
+    border-radius: 10px;
+}
