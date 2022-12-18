@@ -13,6 +13,19 @@
     border-radius: 10px;
 }
 
+.cart__checkout-container.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.cart__checkout-container > :nth-child(2) {
+    margin-top: 1rem;
+}
+
+
 @media (min-width: 480px) {
     .cart-heading {
         display: flex;
