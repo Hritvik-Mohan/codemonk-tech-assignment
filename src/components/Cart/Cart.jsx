@@ -26,14 +26,16 @@ export default function Cart() {
                     <div className="cart-product-header">
                         Product
                     </div>
-                    <div className="cart-price-header">
-                        Price
-                    </div>
-                    <div className="cart-quantity-header">
-                        Quantity
-                    </div>
-                    <div className="cart-subtotal-header">
-                        Subtotal
+                    <div className='cart-price-qty-subtotal-container'>
+                        <div className="cart-price-header">
+                            Price
+                        </div>
+                        <div className="cart-quantity-header">
+                            Quantity
+                        </div>
+                        <div className="cart-subtotal-header">
+                            Subtotal
+                        </div>
                     </div>
                 </div>
                 <div className="cart-items">

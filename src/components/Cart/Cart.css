@@ -12,3 +12,29 @@
     border: 1px solid var(--clr-light-grey);
     border-radius: 10px;
 }
+
+@media (min-width: 480px) {
+    .cart-heading {
+        display: flex;
+        margin-top: 4.375rem;
+    }
+    
+    .cart-header {
+        display: flex;
+        justify-content: space-around;
+        /* width: 10%; */
+    }
+
+    .cart-price-qty-subtotal-container {
+        display: flex;
+        justify-content: space-around;
+        /* width: 90%; */
+    }
+
+    .cart-container {
+        background-color: var(--clr-white);
+        margin-top: 1.875rem;
+        border: 1px solid var(--clr-light-grey);
+        border-radius: 10px;
+    }
+}
