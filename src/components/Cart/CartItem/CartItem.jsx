@@ -1,9 +1,36 @@
-import ItemCount from '../../ItemCount/ItemCount'
+// import ItemCount from '../../ItemCount/ItemCount'
 import DELETE from '../../../assets/icon/DELETE.png'
 import './CartItem.css'
+import { useState } from 'react';
 
 export default function CartItem(props) {
-    console.log(props)
+    // console.log(props.product.price);
+
+    const [counter, setCounter] = useState(0);
+    const [subtotal, setSubtotal] = useState(props.product.price);
+
+    const [currentSubtotal, setCurrentSubtotal] = useState(subtotal);
+
+    console.log(currentSubtotal)
+
+    function decrement() {
+        if (counter > 0 && subtotal > props.product.price) {
+            setCounter(count => count - 1);
+            setSubtotal(subtotal => subtotal - props.product.price)
+        }
+    }
+
+    function increment() {
+        setCounter(count => count + 1);
+        setSubtotal(subtotal => subtotal + props.product.price);
+        // setCurrentSubtotal(currentSubtotal => currentSubtotal.map({ 
+        // }))
+    }
+
+    function handleChange() {
+        // console.log("handleChange")
+    }
+
     return (
         <div className='cart-item__container'>
             <div className="cart-item__image-container">
@@ -24,12 +51,22 @@ export default function CartItem(props) {
                         </div>
                         <div className="cart-item__subtotal">
                             <p>
-                                {props.product.price} <span>$</span>
+                                {subtotal} <span>$</span>
                             </p>
                         </div>
                     </div>
                     <div className="cart-item__quantity">
-                        <ItemCount />
+                        <div className='item-count__container'>
+                            <button className='item-count__decrement' onClick={decrement}>-</button>
+                            <input
+                                type="number"
+                                name="quantity"
+                                value={counter}
+                                onChange={handleChange}
+                                className='item-count__input'
+                            />
+                            <button className='item-count__increment' onClick={increment}>+</button>
+                        </div>
                     </div>
                 </div>
 
@@ -43,13 +80,23 @@ export default function CartItem(props) {
                     </p>
                 </div>
                 <div className="cart-item__quantity desk">
-                    <ItemCount />
+                    <div className='item-count__container'>
+                        <button className='item-count__decrement' onClick={decrement}>-</button>
+                        <input
+                            type="number"
+                            name="quantity"
+                            value={counter}
+                            onChange={handleChange}
+                            className='item-count__input'
+                        />
+                        <button className='item-count__increment' onClick={increment}>+</button>
+                    </div>
                 </div>
 
 
                 <div className="cart-item__subtotal desk">
                     <p>
-                        {props.product.price} <span>$</span>
+                        {subtotal} <span>$</span>
                     </p>
                 </div>
                 <div className="cart-item__delete">
