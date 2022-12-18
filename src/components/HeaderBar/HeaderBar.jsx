@@ -1,7 +1,7 @@
 import search from '../../assets/icon/search.png';
 import user from '../../assets/icon/user.png'
 import cart from '../../assets/icon/shopping.png'
-import logo from '../../assets/Images/logo.png'
+import logo from '../../assets/logo.png'
 import './HeaderBar.css'
 
 export default function HeaderBar() {
