@@ -1,0 +1,15 @@
+.footer {
+    color: var(--clr-white);
+    background-color: var(--clr-dark-grey);
+}
+
+.footer-mob {
+    padding: 1rem;
+}
+
+.footer-mob__links-section-1, .footer-mob__links-section-2 {
+    font-size: 0.7rem;
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+}
