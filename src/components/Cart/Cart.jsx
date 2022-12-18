@@ -1,6 +1,10 @@
 import './Cart.css'
 import data from '../../data.json'
 import CartItem from './CartItem/CartItem'
+import DeliveryAvailability from '../DeliveryAvailability/DeliveryAvailability';
+import OrderSummary from '../OrderSummary/OrderSummary';
+import ButtonType1 from '../Button/ButtonType1/ButtonType1';
+import ButtonType2 from '../Button/ButtonType2/ButtonType2';
 
 export default function Cart() {
 
@@ -42,6 +46,12 @@ export default function Cart() {
                     {cartItems}
                 </div>
             </div>
+        </div>
+        <DeliveryAvailability />
+        <OrderSummary />
+        <div className="cart__checkout-container container">
+            <ButtonType1 text="Checkout"/>
+            <ButtonType2 text="Continue Shopping"/>
         </div>
     </section>
   )
