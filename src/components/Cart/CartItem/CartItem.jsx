@@ -16,18 +16,38 @@ export default function CartItem(props) {
                         <p className='cart-item__desc'>{props.product.desc}</p>
                     </div>
                 </div>
-                <div className="cart-item__qty">
+
+                <div className='cart-item__item-count-flex mobile'>
+                    <div>
+                        <div className="cart-item__qty">
+                            <span>Qty: 1</span>
+                        </div>
+                        <div className="cart-item__subtotal">
+                            <p>
+                                {props.product.price} <span>$</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div className="cart-item__quantity">
+                        <ItemCount />
+                    </div>
+                </div>
+
+
+                <div className="cart-item__qty desk">
                     <span>Qty: 1</span>
                 </div>
-                <div className="cart-item__price">
+                <div className="cart-item__price desk">
                     <p>
                         {props.product.price} <span>$</span>
                     </p>
                 </div>
-                <div className="cart-item__quantity">
+                <div className="cart-item__quantity desk">
                     <ItemCount />
                 </div>
-                <div className="cart-item__subtotal">
+
+
+                <div className="cart-item__subtotal desk">
                     <p>
                         {props.product.price} <span>$</span>
                     </p>
