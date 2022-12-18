@@ -9,6 +9,8 @@
 .cart-container {
     background-color: var(--clr-light);
     margin-top: 1.875rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border: 1px solid var(--clr-light-grey);
     border-radius: 10px;
 }

@@ -41,16 +41,19 @@
     /* overflow: hidden; */
     font-weight: 400;
     font-size: 13px;
+    color: var(--clr-greyish);
 }
 
 .cart-item__qty {
     font-weight: 500;
     font-size: 0.8125rem;
+    color: var(--clr-greyish-light);
 }
 
 .cart-item__subtotal {
     font-weight: 500;
     font-size: 0.875rem;
+    color: var(--clr-dark);
 }
 
 .cart-item__details {
