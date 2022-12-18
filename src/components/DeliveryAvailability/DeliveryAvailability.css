@@ -1,0 +1,78 @@
+.delivery-availability {
+    margin-top: 2rem;
+}
+.delivery-availability__container {
+    padding: 2rem 1.5rem;
+    border: 1px solid var(--clr-light-grey);
+    background-color: var(--clr-white);
+    border-radius: 5px;
+}
+
+.delivery-availability__input__container > div {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* justify-content: space-between; */
+}
+
+.delivery-availability__input__container {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    border-bottom: 1px solid var(--clr-dark);
+    padding-bottom: 0.5rem;
+}
+
+.delivery-availability__change-button-container {
+    display: flex;
+    justify-content: end;
+}
+
+.delivery-availability__input > input {
+    /* display: flex; */
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+}
+
+.delivery-availability__input > input:focus {
+    outline: none;
+}
+
+.delivery-availability__location-icon {
+    display: flex;
+}
+
+.delivery-availability__check-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 3rem;
+}
+
+.delivery-availability__check {
+
+}
+
+.delivery-availability__check-text {
+    font-weight: 400;
+    font-size: 0.75rem;
+    line-height: 15px;
+}
+
+.check {
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    /* .delivery-availability {
+        margin-top: 0;
+    } */
+
+    /* .delivery-availability__input__container {
+        border-top: transparent;
+        border-radius: 0px 0px 0px 0px;
+    } */
+}
