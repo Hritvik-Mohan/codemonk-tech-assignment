@@ -8,7 +8,7 @@ export default function DeliveryAvailability() {
     <section className='delivery-availability'>
         <div className="delivery-availability__container container">
 
-            <h3>Delivery Availability</h3>
+            <h3 className='delivery-availability__heading'>Delivery Availability</h3>
 
             <div className="delivery-availability__input__container">
                 <div>

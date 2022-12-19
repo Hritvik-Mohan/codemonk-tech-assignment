@@ -1,11 +1,17 @@
 .delivery-availability {
     margin-top: 2rem;
+    width: 100%;
 }
 .delivery-availability__container {
     padding: 2rem 1.5rem;
     border: 1px solid var(--clr-light-grey);
     background-color: var(--clr-white);
     border-radius: 5px;
+}
+
+.delivery-availability__heading {
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .delivery-availability__input__container > div {
@@ -67,12 +73,22 @@
 }
 
 @media (min-width: 480px) {
-    /* .delivery-availability {
+    .delivery-availability {
         margin-top: 0;
-    } */
+    }
 
     /* .delivery-availability__input__container {
         border-top: transparent;
         border-radius: 0px 0px 0px 0px;
     } */
+
+    .delivery-availability__container {
+        padding: 2rem 1.5rem;
+        /* border: 1px solid var(--clr-light-grey); */
+        border:  none;
+        /* background-color: var(--clr-white); */
+        border-radius: 5px;   
+    }
+
+
 }

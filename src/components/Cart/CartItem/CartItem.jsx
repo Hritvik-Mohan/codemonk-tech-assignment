@@ -2,6 +2,8 @@
 import DELETE from '../../../assets/icon/DELETE.png'
 import './CartItem.css'
 import { useState } from 'react';
+import OrderSummary from '../../OrderSummary/OrderSummary';
+import { useEffect } from 'react';
 
 export default function CartItem({ price, imageUrl, name, desc, id, handleDeleteItem }) {
     // console.log(props.product.price);
@@ -11,6 +13,37 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
 
     const [counter, setCounter] = useState(0);
     const [subtotal, setSubtotal] = useState(price);
+
+    const [allSubtotal, setAllSubtotal] = useState([])
+
+    // console.log(subtotal.length)
+
+    // useEffect((subtotal) => {
+    //     console.log([subtotal])        
+    // }, [subtotal])
+
+    console.log(subtotal);
+    // getSubtotal(subtotal);
+
+    // useEffect(() => {
+    //     let sum = 0;
+    //     // for(let i = 0; i )
+    //     // console.log(subtotal)
+
+    //     let total_price = subtotal.reduce(() => {
+
+    //     }, 0)
+    // }, [subtotal])
+    
+    // console.log(subtotal)
+
+
+    // const initialValue = 0;
+    // const total = data.reduce((accumulator,current) => accumulator + current.aprice, initialValue)
+
+
+
+
 
     const [currentSubtotal, setCurrentSubtotal] = useState(subtotal);
 

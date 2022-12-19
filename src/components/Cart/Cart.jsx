@@ -17,6 +17,14 @@ export default function Cart() {
         console.log(products)
     }
 
+    function getSubtotal (subtotal) {
+        return subtotal
+    }
+
+    let subtotal = getSubtotal();
+    // console.log(subtotal)
+
+
     const cartItems = products.map(product => {
         return (
             <CartItem 
@@ -28,15 +36,17 @@ export default function Cart() {
                 imageUrl={product.imageUrl}
                 desc={product.desc}
                 id={product.id}
-                handleDeleteItem={handleDeleteItem}/>
+                handleDeleteItem={handleDeleteItem}
+                getSubtotal={getSubtotal}
+            />
         )
       })
 
   return (
+    <>
+    <h2 className="cart-heading container">Shopping Cart</h2>
     <section className="cart">
         <div className="container">
-            <h2 className="cart-heading">Shopping Cart</h2>
-
             <div className="cart-container">
                 <div className="cart-header">
                     <div className="cart-product-header">
@@ -59,12 +69,28 @@ export default function Cart() {
                 </div>
             </div>
         </div>
-        <DeliveryAvailability />
-        <OrderSummary products={products}/>
-        <div className="cart__checkout-container container">
+        <div className="delivery-order__container container">
+            <div>
+                <DeliveryAvailability />
+                <OrderSummary
+                    products={products}
+                />
+            </div>
+            <div className="cart__checkout-container desktop">
+                <div>
+                    <ButtonType1 className="cart__checkout-button-1" text="Checkout"/>
+                    <div>
+                        <ButtonType2 className="cart__checkout-button-2" text="Continue Shopping"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div className="cart__checkout-container container mob">
             <ButtonType1 text="Checkout"/>
             <ButtonType2 text="Continue Shopping"/>
         </div>
     </section>
+    </>
   )
 }

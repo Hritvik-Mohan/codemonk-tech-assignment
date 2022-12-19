@@ -2,16 +2,19 @@ import './OrderSummary.css'
 import '../DeliveryAvailability/DeliveryAvailability.css'
 
 export default function OrderSummary(props) {
+
+    // console.log(props.products.price)
+
   return (
     <section className='delivery-availability'>
-    <div className="delivery-availability__container container">
+    <div className="order-summary__container container">
 
-        <h3>Order Summary ({props.products.length} items)</h3>
+        <h3 className='order-summary__heading'>Order Summary ({props.products.length} items)</h3>
 
         <div className="order-summary">
             <div className="order-summary__section order-summary__subtotal">
                 <p>Subtotal</p>
-                <p>2500 <span>$</span></p>
+                <p>{props.products.price} <span>$</span></p>
             </div>
 
             <div className="order-summary__section order-summary__total-discount">
@@ -25,11 +28,11 @@ export default function OrderSummary(props) {
             </div>
         </div>
 
-        <div className="order-summary__grand-total">
-            <p>Grand Total</p>
-            <p>42 998,00 <span>$</span></p>
-        </div>
-
+    </div>
+    <div className="order-summary__grand-total container">
+        <p className='order-summary__grand-total-text'>Grand Total</p>
+        <p className='order-total'>Order Total</p>
+        <p className='order-summary__grand-total-price'>42 998,00 <span>$</span></p>
     </div>
 </section>
   )
