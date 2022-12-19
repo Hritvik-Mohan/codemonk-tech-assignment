@@ -143,9 +143,6 @@
         display: none;
     }
 
-    .cart-item__subtotal.desk {
-        /* display: none; */
-    }
 
 }
 
@@ -175,7 +172,4 @@
         background-color: var(--clr-white);
     }
 
-    .item-count__container {
-        /* display: ; */
-    }
 }

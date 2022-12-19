@@ -7,7 +7,7 @@ export default function OrderSummary(props) {
 
   return (
     <section className='delivery-availability'>
-    <div className="order-summary__container container">
+    <div className="order-summary__container">
 
         <h3 className='order-summary__heading'>Order Summary ({props.products.length} items)</h3>
 
@@ -19,7 +19,7 @@ export default function OrderSummary(props) {
 
             <div className="order-summary__section order-summary__total-discount">
                 <p>Total Discount</p>
-                <p>-100 <span>$</span></p>
+                <p><span>$</span></p>
             </div>
 
             <div className="order-summary__section order-summary__standard-shipping">
@@ -29,7 +29,7 @@ export default function OrderSummary(props) {
         </div>
 
     </div>
-    <div className="order-summary__grand-total container">
+    <div className="order-summary__grand-total">
         <p className='order-summary__grand-total-text'>Grand Total</p>
         <p className='order-total'>Order Total</p>
         <p className='order-summary__grand-total-price'>42 998,00 <span>$</span></p>

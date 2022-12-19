@@ -6,7 +6,7 @@ import check from '../../assets/icon/check.png'
 export default function DeliveryAvailability() {
   return (
     <section className='delivery-availability'>
-        <div className="delivery-availability__container container">
+        <div className="delivery-availability__container">
 
             <h3 className='delivery-availability__heading'>Delivery Availability</h3>
 
