@@ -22,9 +22,15 @@ export default function DeliveryAvailability( { isAvailable } ) {
             ...availability,
             [name]: value
         }))
-
     }
     // console.log(availability)
+
+    function changeFun () {
+        setAvailability((availability) => {
+            availability.pincode = ""
+        })
+        console.log("change clicked")
+    }
 
 
     let isFreeDelivery = false;
@@ -99,7 +105,7 @@ export default function DeliveryAvailability( { isAvailable } ) {
                         </div>
                     </div>
                     <div className='delivery-availability__change-button-container'>
-                        <ButtonType2 text="Change" />
+                        <ButtonType2 text="Change" onClick={changeFun}/>
                     </div>
                 </div>
 
