@@ -1,12 +1,12 @@
 import './OrderSummary.css'
 import '../DeliveryAvailability/DeliveryAvailability.css'
 
-export default function OrderSummary() {
+export default function OrderSummary(props) {
   return (
     <section className='delivery-availability'>
     <div className="delivery-availability__container container">
 
-        <h3>Order Summary (xx items)</h3>
+        <h3>Order Summary ({props.products.length} items)</h3>
 
         <div className="order-summary">
             <div className="order-summary__section order-summary__subtotal">
