@@ -52,7 +52,7 @@ export default function Cart() {
                     <div className="cart-product-header">
                         Product
                     </div>
-                    <div className='cart-price-qty-subtotal-container'>
+                    {/* <div className='cart-price-qty-subtotal-container'> */}
                         <div className="cart-price-header">
                             Price
                         </div>
@@ -62,7 +62,7 @@ export default function Cart() {
                         <div className="cart-subtotal-header">
                             Subtotal
                         </div>
-                    </div>
+                    {/* </div> */}
                 </div>
                 <div className="cart-items">
                     {cartItems}

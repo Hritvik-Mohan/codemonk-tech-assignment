@@ -109,6 +109,7 @@
 
     .cart-item__delete {
         display: block;
+        padding-right: 1rem;
     }
 
     .cart-item__image-container {
