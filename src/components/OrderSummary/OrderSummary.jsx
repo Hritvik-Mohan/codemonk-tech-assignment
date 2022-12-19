@@ -1,9 +1,13 @@
 import './OrderSummary.css'
 import '../DeliveryAvailability/DeliveryAvailability.css'
+import data from '../../data.json'
 
 export default function OrderSummary(props) {
 
+    // console.log(data.discount)
+
     // console.log(props.products.price)
+    console.log(props.isAva)
 
   return (
     <section className='delivery-availability'>

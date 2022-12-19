@@ -24,6 +24,19 @@ export default function Cart() {
     let subtotal = getSubtotal();
     // console.log(subtotal)
 
+    // let isAvailable
+
+    let isAva = false;
+
+    function isAvailable(isAvailable) {
+        isAva = isAvailable
+        console.log(isAva)
+    }
+
+    let isEnable = {
+
+    }
+
 
     const cartItems = products.map(product => {
         return (
@@ -41,6 +54,7 @@ export default function Cart() {
             />
         )
       })
+
 
   return (
     <>
@@ -71,14 +85,15 @@ export default function Cart() {
         </div>
         <div className="delivery-order__container container">
             <div>
-                <DeliveryAvailability />
+                <DeliveryAvailability isAvailable={isAvailable}/>
                 <OrderSummary
                     products={products}
+                    isAva= {isAva}
                 />
             </div>
             <div className="cart__checkout-container desktop">
                 <div>
-                    <ButtonType1 className="cart__checkout-button-1" text="Checkout"/>
+                    <ButtonType1 className="cart__checkout-button-1" text="Checkout" isAva={isAva}/>
                     <div>
                         <ButtonType2 className="cart__checkout-button-2" text="Continue Shopping"/>
                     </div>
@@ -87,7 +102,7 @@ export default function Cart() {
         </div>
 
         <div className="cart__checkout-container container mob">
-            <ButtonType1 text="Checkout"/>
+            <ButtonType1 text="Checkout" isAva={isAva}/>
             <ButtonType2 text="Continue Shopping"/>
         </div>
     </section>

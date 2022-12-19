@@ -22,7 +22,7 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
     //     console.log([subtotal])        
     // }, [subtotal])
 
-    console.log(subtotal);
+    // console.log(Object.keys(subtotal));
     // getSubtotal(subtotal);
 
     // useEffect(() => {
@@ -66,6 +66,8 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
     function handleChange() {
         // console.log("handleChange")
     }
+
+
 
 
     return (
@@ -133,8 +135,9 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
 
                 <div className="cart-item__subtotal desk">
                     <p>
-                        {subtotal} <span>$</span>
+                        {subtotal}
                     </p>
+                    <span style={{padding:"0 0 0 0.3rem"}}> $</span>
                 </div>
                 <div className="cart-item__delete">
                     <img 
