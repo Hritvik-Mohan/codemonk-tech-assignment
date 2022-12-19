@@ -32,7 +32,7 @@ export default function OrderSummary(props) {
     <div className="order-summary__grand-total">
         <p className='order-summary__grand-total-text'>Grand Total</p>
         <p className='order-total'>Order Total</p>
-        <p className='order-summary__grand-total-price'>42 998,00 <span>$</span></p>
+        <p className='order-summary__grand-total-price'>0 <span>$</span></p>
     </div>
 </section>
   )
