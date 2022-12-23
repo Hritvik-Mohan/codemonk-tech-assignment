@@ -4,17 +4,35 @@ import './CartItem.css'
 import { useState } from 'react';
 import OrderSummary from '../../OrderSummary/OrderSummary';
 import { useEffect } from 'react';
+import { CartState } from '../../../context/Context';
 
-export default function CartItem({ price, imageUrl, name, desc, id, handleDeleteItem }) {
+export default function CartItem({ product, price, subtotal, imageUrl, name, desc, id, handleDeleteItem, qty, getTotal }) {
     // console.log(props.product.price);
 
     // console.log(name)
     // console.log(id)
 
-    const [counter, setCounter] = useState(0);
-    const [subtotal, setSubtotal] = useState(price);
+    const {
+        state: { cartProducts, total },
+        dispatch,
+    } = CartState();
+    // console.log(cartProducts)
 
-    const [allSubtotal, setAllSubtotal] = useState([])
+    // console.log(subtotal)
+
+    let subT = product.price * product.qty
+    product.sub = subT;
+
+    // console.log(subT)
+
+    const [counter, setCounter] = useState(1);
+    const [subtotals, setSubtotal] = useState(price);
+
+    // console.log(cartProducts.qty)
+
+    // qty = counter;
+
+    // const [allSubtotal, setAllSubtotal] = useState([])
 
     // console.log(subtotal.length)
 
@@ -41,7 +59,25 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
     // const initialValue = 0;
     // const total = data.reduce((accumulator,current) => accumulator + current.aprice, initialValue)
 
+    const subs = cartProducts.map((prod) => prod.sub)
+    // console.log(subs)
+    // const [total, setTotal] = useState();
+    // useEffect(() => {
+    //   return () => {
+    //     setTotal(subs.reduce((acc, curr) => acc + curr.sub , 0))
+    //   }
+    // },[CartItem])
+    // console.log(total)
 
+    let sum = 0
+    for(let i = 0; i < subs.length; i++) {
+        sum = sum + subs[i];
+    }
+    // console.log(sum)
+    total.total = sum;
+    console.log(total.total)
+
+    console.log(total.total * 0.1)
 
 
 
@@ -50,15 +86,24 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
     // console.log(currentSubtotal)
 
     function decrement() {
-        if (counter > 0 && subtotal > price) {
+        if (counter > 1) {
             setCounter(count => count - 1);
             setSubtotal(subtotal => subtotal - price)
+            product.qty--;
+            dispatch({
+                type: "DECREMENT_QTY"
+            })
         }
     }
 
     function increment() {
         setCounter(count => count + 1);
         setSubtotal(subtotal => subtotal + price);
+        product.qty++;
+        dispatch({
+            type: "INCREMENT_QTY"
+        })
+
         // setCurrentSubtotal(currentSubtotal => currentSubtotal.map({ 
         // }))
     }
@@ -66,6 +111,8 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
     function handleChange() {
         // console.log("handleChange")
     }
+
+    // console.log(subtotal)
 
 
 
@@ -90,7 +137,7 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
                         </div>
                         <div className="cart-item__subtotal">
                             <p>
-                                {subtotal} <span>$</span>
+                                {product.sub} <span>$</span>
                             </p>
                         </div>
                     </div>
@@ -100,7 +147,7 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
                             <input
                                 type="number"
                                 name="quantity"
-                                value={counter}
+                                value={product.qty}
                                 onChange={handleChange}
                                 className='item-count__input'
                             />
@@ -124,7 +171,7 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
                         <input
                             type="number"
                             name="quantity"
-                            value={counter}
+                            value={product.qty}
                             onChange={handleChange}
                             className='item-count__input'
                         />
@@ -135,7 +182,7 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
 
                 <div className="cart-item__subtotal desk">
                     <p>
-                        {subtotal}
+                        {product.sub}
                     </p>
                     <span style={{padding:"0 0 0 0.3rem"}}> $</span>
                 </div>
@@ -143,7 +190,12 @@ export default function CartItem({ price, imageUrl, name, desc, id, handleDelete
                     <img 
                         src={DELETE} 
                         alt=""
-                        onClick={()=> handleDeleteItem(id)} 
+                        onClick={() => {
+                            dispatch({
+                                type: 'REMOVE_FROM_CART',
+                                payload: product
+                            })
+                        }}
                     />
                 </div>
             </div>
