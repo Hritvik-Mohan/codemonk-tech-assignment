@@ -30,12 +30,12 @@ export default function OrderSummary(props) {
 
             <div className="order-summary__section order-summary__total-discount">
                 <p>Total Discount</p>
-                <p><span>-{props.products.length ? total.total * 0.1 : 0} $</span></p>
+                <p><span>- {props.products.length ? total.total * 0.1 : 0} $</span></p>
             </div>
 
             <div className="order-summary__section order-summary__standard-shipping">
                 <p>Standart Shipping</p>
-                <p>Free</p>
+                <p>{props.products.length ? "Free" : "-"}</p>
             </div>
         </div>
 
@@ -43,7 +43,7 @@ export default function OrderSummary(props) {
     <div className="order-summary__grand-total">
         <p className='order-summary__grand-total-text'>Grand Total</p>
         <p className='order-total'>Order Total</p>
-        <p className='order-summary__grand-total-price'>{total.total - total.total * 0.1 } <span>$</span></p>
+        <p className='order-summary__grand-total-price'>{props.products.length ? total.total - total.total * 0.1 : 0 } <span>$</span></p>
     </div>
 </section>
   )
