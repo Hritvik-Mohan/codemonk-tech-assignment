@@ -11,22 +11,10 @@ export default function OrderSummary(props) {
         dispatch,
     } = CartState();
 
-    // console.log(total.total)
 
-    // const [subtotal, setSubtotal] = useState(total.total);
-    // useEffect(() => {
-    //     setSubtotal(total.total)
-    // },[total.total])
-    // console.log(subtotal)
-
-    console.log(props)
-
-    console.log(data.discount)
+    // console.log(props)
 
     // console.log(data.discount)
-
-    // console.log(props.products.price)
-    // console.log(props.isAva)
 
   return (
     <section className='delivery-availability'>

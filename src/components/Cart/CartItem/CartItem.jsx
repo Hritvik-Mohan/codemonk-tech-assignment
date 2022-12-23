@@ -2,88 +2,32 @@
 import DELETE from '../../../assets/icon/DELETE.png'
 import './CartItem.css'
 import { useState } from 'react';
-import OrderSummary from '../../OrderSummary/OrderSummary';
-import { useEffect } from 'react';
 import { CartState } from '../../../context/Context';
 
 export default function CartItem({ product, price, subtotal, imageUrl, name, desc, id, handleDeleteItem, qty, getTotal }) {
-    // console.log(props.product.price);
-
-    // console.log(name)
-    // console.log(id)
-
     const {
         state: { cartProducts, total },
         dispatch,
     } = CartState();
-    // console.log(cartProducts)
-
-    // console.log(subtotal)
 
     let subT = product.price * product.qty
     product.sub = subT;
 
-    // console.log(subT)
-
     const [counter, setCounter] = useState(1);
     const [subtotals, setSubtotal] = useState(price);
 
-    // console.log(cartProducts.qty)
-
-    // qty = counter;
-
-    // const [allSubtotal, setAllSubtotal] = useState([])
-
-    // console.log(subtotal.length)
-
-    // useEffect((subtotal) => {
-    //     console.log([subtotal])        
-    // }, [subtotal])
-
-    // console.log(Object.keys(subtotal));
-    // getSubtotal(subtotal);
-
-    // useEffect(() => {
-    //     let sum = 0;
-    //     // for(let i = 0; i )
-    //     // console.log(subtotal)
-
-    //     let total_price = subtotal.reduce(() => {
-
-    //     }, 0)
-    // }, [subtotal])
-    
-    // console.log(subtotal)
-
-
-    // const initialValue = 0;
-    // const total = data.reduce((accumulator,current) => accumulator + current.aprice, initialValue)
 
     const subs = cartProducts.map((prod) => prod.sub)
-    // console.log(subs)
-    // const [total, setTotal] = useState();
-    // useEffect(() => {
-    //   return () => {
-    //     setTotal(subs.reduce((acc, curr) => acc + curr.sub , 0))
-    //   }
-    // },[CartItem])
-    // console.log(total)
 
     let sum = 0
     for(let i = 0; i < subs.length; i++) {
         sum = sum + subs[i];
     }
-    // console.log(sum)
     total.total = sum;
     console.log(total.total)
 
     console.log(total.total * 0.1)
 
-
-
-    const [currentSubtotal, setCurrentSubtotal] = useState(subtotal);
-
-    // console.log(currentSubtotal)
 
     function decrement() {
         if (counter > 1) {
@@ -103,19 +47,11 @@ export default function CartItem({ product, price, subtotal, imageUrl, name, des
         dispatch({
             type: "INCREMENT_QTY"
         })
-
-        // setCurrentSubtotal(currentSubtotal => currentSubtotal.map({ 
-        // }))
     }
 
     function handleChange() {
         // console.log("handleChange")
     }
-
-    // console.log(subtotal)
-
-
-
 
     return (
         <div className='cart-item__container'>

@@ -24,10 +24,6 @@ const Context = ({ children }) => {
     total: total
   }); 
 
-  // const [total, setTotal] = useState();
-
-  // console.log(state.cartProducts)
-
   return <Cart.Provider value = {{ state, dispatch }}>{children}</Cart.Provider>
 }
 
